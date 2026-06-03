@@ -2,18 +2,18 @@ public class Paciente {
 
     private String id;
     private String nombre;
-    private String telefono;
     private int edad;
+    private String telefono;
 
     public Paciente(String id,
                     String nombre,
-                    String telefono,
-                    int edad) {
+                    int edad,
+                    String telefono) {
 
         this.id = id;
         this.nombre = nombre;
-        this.telefono = telefono;
         this.edad = edad;
+        this.telefono = telefono;
     }
 
     public String getId() {
@@ -24,12 +24,12 @@ public class Paciente {
         return nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
     public int getEdad() {
         return edad;
+    }
+
+    public String getTelefono() {
+        return telefono;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Paciente {
 
         return id + "," +
                 nombre + "," +
-                telefono + "," +
-                edad;
+                edad + "," +
+                telefono;
     }
 }
