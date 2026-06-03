@@ -31,7 +31,35 @@ public class Main {
             switch (opcion) {
 
                 case 1:
-                    System.out.println("Funcionalidad en construcción.");
+
+                    scanner.nextLine();
+
+                    System.out.print("ID: ");
+                    String id = scanner.nextLine();
+
+                    System.out.print("Nombre: ");
+                    String nombre = scanner.nextLine();
+
+                    System.out.print("Edad: ");
+                    int edad = scanner.nextInt();
+
+                    scanner.nextLine();
+
+                    System.out.print("Teléfono: ");
+                    String telefono = scanner.nextLine();
+
+                    Paciente paciente =
+                            new Paciente(
+                                    id,
+                                    nombre,
+                                    edad,
+                                    telefono
+                            );
+
+                    ArchivoCSV.guardarPaciente(
+                            paciente
+                    );
+
                     break;
 
                 case 2:
