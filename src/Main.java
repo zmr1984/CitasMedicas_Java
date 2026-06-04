@@ -63,23 +63,79 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Funcionalidad en construcción.");
+
+                    scanner.nextLine();
+
+                    System.out.print("ID Doctor: ");
+                    String idDoctor = scanner.nextLine();
+
+                    System.out.print("Nombre: ");
+                    String nombreDoctor = scanner.nextLine();
+
+                    System.out.print("Especialidad: ");
+                    String especialidad = scanner.nextLine();
+
+                    Doctor doctor =
+                            new Doctor(
+                                    idDoctor,
+                                    nombreDoctor,
+                                    especialidad
+                            );
+
+                    ArchivoCSV.guardarDoctor(
+                            doctor
+                    );
+
                     break;
 
                 case 3:
-                    System.out.println("Funcionalidad en construcción.");
+
+                    scanner.nextLine();
+
+                    System.out.print("Folio de cita: ");
+                    String folio = scanner.nextLine();
+
+                    System.out.print("ID Paciente: ");
+                    String pacienteId = scanner.nextLine();
+
+                    System.out.print("ID Doctor: ");
+                    String doctorIdCita = scanner.nextLine();
+
+                    System.out.print("Fecha (dd/mm/yyyy): ");
+                    String fecha = scanner.nextLine();
+
+                    System.out.print("Hora (hh:mm): ");
+                    String hora = scanner.nextLine();
+
+                    Cita cita =
+                            new Cita(
+                                    folio,
+                                    pacienteId,
+                                    doctorIdCita,
+                                    fecha,
+                                    hora
+                            );
+
+                    ArchivoCSV.guardarCita(cita);
+
                     break;
 
                 case 4:
-                    System.out.println("Funcionalidad en construcción.");
+
+                    ArchivoCSV.mostrarPacientes();
+
                     break;
 
                 case 5:
-                    System.out.println("Funcionalidad en construcción.");
+
+                    ArchivoCSV.mostrarDoctores();
+
                     break;
 
                 case 6:
-                    System.out.println("Funcionalidad en construcción.");
+
+                    ArchivoCSV.mostrarCitas();
+
                     break;
 
                 case 7:
