@@ -145,8 +145,13 @@ public class ArchivoCSV {
 
             while ((linea = reader.readLine()) != null) {
 
-                System.out.println(linea);
+                String[] datos = linea.split(",");
 
+                System.out.println("\nID: " + datos[0]);
+                System.out.println("Nombre: " + datos[1]);
+                System.out.println("Edad: " + datos[2]);
+                System.out.println("Teléfono: " + datos[3]);
+                System.out.println("----------------------------------");
             }
 
         } catch (IOException e) {
@@ -170,8 +175,12 @@ public class ArchivoCSV {
 
             while ((linea = reader.readLine()) != null) {
 
-                System.out.println(linea);
+                String[] datos = linea.split(",");
 
+                System.out.println("\nID Doctor: " + datos[0]);
+                System.out.println("Nombre: " + datos[1]);
+                System.out.println("Especialidad: " + datos[2]);
+                System.out.println("----------------------------------");
             }
 
         } catch (IOException e) {
@@ -195,8 +204,14 @@ public class ArchivoCSV {
 
             while ((linea = reader.readLine()) != null) {
 
-                System.out.println(linea);
+                String[] datos = linea.split(",");
 
+                System.out.println("\nFolio: " + datos[0]);
+                System.out.println("Paciente: " + datos[1]);
+                System.out.println("Doctor: " + datos[2]);
+                System.out.println("Fecha: " + datos[3]);
+                System.out.println("Hora: " + datos[4]);
+                System.out.println("----------------------------------");
             }
 
         } catch (IOException e) {
