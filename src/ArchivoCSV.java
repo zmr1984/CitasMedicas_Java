@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class ArchivoCSV {
 
@@ -80,6 +82,127 @@ public class ArchivoCSV {
 
             System.out.println(
                     "Error al guardar paciente: "
+                            + e.getMessage()
+            );
+        }
+    }
+
+    public static void guardarDoctor(Doctor doctor) {
+
+        try (BufferedWriter writer =
+                     new BufferedWriter(
+                             new FileWriter(DOCTORES, true))) {
+
+            writer.write(doctor.toString());
+
+            writer.newLine();
+
+            System.out.println(
+                    "Doctor guardado correctamente."
+            );
+
+        } catch (IOException e) {
+
+            System.out.println(
+                    "Error al guardar doctor: "
+                            + e.getMessage()
+            );
+        }
+    }
+
+    public static void guardarCita(Cita cita) {
+
+        try (BufferedWriter writer =
+                     new BufferedWriter(
+                             new FileWriter(CITAS, true))) {
+
+            writer.write(cita.toString());
+
+            writer.newLine();
+
+            System.out.println(
+                    "Cita guardada correctamente."
+            );
+
+        } catch (IOException e) {
+
+            System.out.println(
+                    "Error al guardar cita: "
+                            + e.getMessage()
+            );
+        }
+    }
+
+    public static void mostrarPacientes() {
+
+        System.out.println("\n===== PACIENTES =====");
+
+        try (BufferedReader reader =
+                     new BufferedReader(
+                             new FileReader(PACIENTES))) {
+
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+
+                System.out.println(linea);
+
+            }
+
+        } catch (IOException e) {
+
+            System.out.println(
+                    "Error al leer pacientes: "
+                            + e.getMessage()
+            );
+        }
+    }
+
+    public static void mostrarDoctores() {
+
+        System.out.println("\n===== DOCTORES =====");
+
+        try (BufferedReader reader =
+                     new BufferedReader(
+                             new FileReader(DOCTORES))) {
+
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+
+                System.out.println(linea);
+
+            }
+
+        } catch (IOException e) {
+
+            System.out.println(
+                    "Error al leer doctores: "
+                            + e.getMessage()
+            );
+        }
+    }
+
+    public static void mostrarCitas() {
+
+        System.out.println("\n===== CITAS =====");
+
+        try (BufferedReader reader =
+                     new BufferedReader(
+                             new FileReader(CITAS))) {
+
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+
+                System.out.println(linea);
+
+            }
+
+        } catch (IOException e) {
+
+            System.out.println(
+                    "Error al leer citas: "
                             + e.getMessage()
             );
         }
